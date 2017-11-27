@@ -9,10 +9,10 @@ class ChangeLocation < ActiveRecord::Migration[5.0]
   end
 
   def down
-    remove_column(:locations, :name)
-    remove_column(:locations, :location)
-    remove_column(:locations, :number_of_employees)
-    remove_column(:locations, :profit)
+    add_column(:locations, :name, :string)
+    add_column(:locations, :location, :string)
+    add_column(:locations, :number_of_employees, :integer)
+    add_column(:locations, :profit, :decimal)
     remove_column(:locations, :city, :string)
     remove_column(:locations, :weather, :string)
   end
